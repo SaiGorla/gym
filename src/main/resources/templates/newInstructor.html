@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Gym Manager</title>
+    
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            font-family: 'Leckerli One', cursive;
+            width: 100%;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: none;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-transform: none;
+            font-weight: 600;
+            font-family: 'Leckerli One', cursive;
+            text-align: center;
+        }
+
+        hr {
+            border-color: #ffc266;
+            border-width: 5px;
+            max-width: 100%;
+        }
+
+
+        .container-h1 {
+            text-align: center;
+            font-size: 50px;
+            font-weight: 700;
+            margin: 50px auto;
+            color: #333;
+            font-family: 'Leckerli One', cursive;
+
+        }
+
+        .btn,
+        .btn:focus {
+            color: #fff;
+            background-color: #182c39;
+            margin: 20px auto;
+            font-weight: 500;
+            display: table;
+            padding: 10px;
+            border: 1px solid #182c39;
+            margin-left: 50%;
+            border-radius: 0;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            color: #182c39;
+            background-color: transparent;
+            border: 1px solid #182c39;
+        }
+
+        .hr-h3s {
+            border: 3px solid #E94B3C;
+            width: 70px;
+            margin: 0 auto 35px auto;
+        }
+
+
+        textarea {
+            resize: none;
+        }
+
+        section {
+            align-items: center;
+            padding: 50px 60px;
+        }
+
+        .bg-section h2 {
+            font-family: 'Leckerli One', cursive;
+            text-transform: none;
+            margin: 50px 0;
+            padding: 25px 20px;
+            border-radius: 50px;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            -moz-animation-name: slide;
+            animation-duration: 1.5s;
+            -webkit-animation-duration: 1.5s;
+            -moz-animation-duration: 1.5s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateX(50%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(50%);
+                transform: translateX(50%);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+            }
+        }
+
+        /* ***** Footer ***** */
+
+        #footer {
+            background-color: #98c3b7;
+            color: white;
+            font-family: 'Leckerli One', cursive;
+        }
+
+        #footer ul {
+            list-style-type: none;
+            padding-left: 0;
+            line-height: 2.2;
+        }
+
+        #footer h5 {
+            font-size: 18px;
+            color: white;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        #footer a {
+            color:#98c3b7;
+        }
+
+        #footer a:hover,
+        #footer a:focus {
+            text-decoration: none;
+            color: white;
+        }
+
+        #footer .social-networks {
+            padding-top: 20px;
+            padding-bottom: 25px;
+        }
+
+        #footer .footer-items .fa {
+            font-size: 17px;
+            margin-bottom: 5px;
+            background-color: white;
+            color: #182c39;
+            border-radius: 50%;
+            padding-bottom: 25px;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            line-height: 31px;
+            text-decoration: none;
+            transition: color 1s;
+        }
+
+        #footer .footer-items {
+            margin: auto;
+            padding-left: 50px;
+            font-size: 15px;
+        }
+
+        #footer .fa-facebook:hover,
+        #footer .fa-instagram:hover {
+            border: 1px solid #fff;
+            color: #fff;
+            background-color: #182c39;
+        }
+
+
+        .footer-copyright {
+            background-color: #e67300;
+        }
+
+        .footer-copyright p {
+            text-align: center;
+            color: #fff;
+            font-size: 15px;
+            padding: 10px 0;
+            margin-bottom: 0;
+            font-family: 'Leckerli One', cursive;
+        }
+
+        #footer .hr-foot {
+            width: 80%;
+            margin: 10px auto;
+            border: 1px solid #fff;
+        }
+
+        #footer .to-top {
+            color: #fff;
+            font-size: 30px;
+            position: fixed;
+            right: 12px;
+            bottom: 12px;
+            height: 40px;
+            width: 40px;
+            text-decoration: none;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #footer .to-top:hover {
+            background-color: #222;
+            color: #fff;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">Gym Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/add">Create Schedules</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/member">Members</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/member/add">Add Members</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/instructor">Instructors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/instructor/add">Add Instructors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bmi">BMI Calculator</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products/add">Add New Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products">Buy Products</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row" style="height:40px"></div>
+    <div class="row align-items-center">
+        <div class="col"></div>
+        <div class="col-6">
+            <h2>Add New Instructor</h2>
+            <br>
+            <form action="#" th:action="@{/instructor/add}" th:object="${instructor}" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" th:field="*{name}" id="name" placeholder="Name" class="form-control">
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" th:field="*{age}" id="age" class="form-control">
+                    <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="licenceNumber">Licence Number</label>
+                    <input type="text" th:field="*{licenceNumber}" id="licenceNumber" class="form-control">
+                    <span th:if="${#fields.hasErrors('licenceNumber')}" th:errors="*{licenceNumber}"></span>
+                </div>                
+                <div class="form-group">
+                    <label for="experience">Years of Experience</label>
+                    <input type="number" th:field="*{experience}" id="experience"
+                    class="form-control">
+                    <span th:if="${#fields.hasErrors('experience')}" th:errors="*{experience}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number</label>
+                    <input type="text" th:field="*{contactNumber}" id="contactNumber" class="form-control">
+                    <span th:if="${#fields.hasErrors('contactNumber')}" th:errors="*{contactNumber}"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Instructor</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+<footer class="-bg-footer" id="footer">
+        <div class="container-fluid">
+            <div class="row footer-align">
+                <div class="col-md-4 col-sm-4">
+                    <h5>AntenaGames</h5>
+                    <hr class="hr-foot">
+                    <div class="footer-items">
+                        <p class="footer">
+                            GymManager is small Gym studio Founded in 2020, on a mission to make people fit.
+                        </p>
+                        <ul class="social-networks">
+                            <a href="https://www.facebook.com/AntenaGamesPlay/" class="facebook" target="_blank"><i
+                                    class="fa fa-facebook"></i></a>
+                            <a href="https://www.pinterest.com/antenagames10/" class="pinterest" target="_blank"><i
+                                    class="fa fa-pinterest"></i></a>
+                            <a href="https://twitter.com/antenagames_com" class="twitter" target="_blank"><i
+                                    class="fa fa-twitter"></i></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h5>Our contact</h5>
+                    <hr class="hr-foot">
+                    <div class="footer-items">
+                        <address>
+                            10 000 Zagreb, Zagreb
+                            <br>
+                            Zagreb, Zagreb
+                            <br>
+                            Croatia
+                            <br>
+                            <i class="fa fa-phone address"></i> 660-528-0277
+                            <br>
+                            <i class="fa fa-fax address"></i> Kansas City
+                            <br>
+                            <i class="fa fa-envelope address"></i> <a href="http://www.GymManager.com"
+                                target="_blank">www.GymManager.com</a>
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h5>Open hours</h5>
+                    <hr class="hr-foot">
+                    <div class="footer-items">
+                        <ul>
+                            <li>Mon-Fri: 08:00-16:00</li>
+                            <li>Sat & Sun: 06:00-16:00</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="to-top" href="#myPage" title="toTop">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
